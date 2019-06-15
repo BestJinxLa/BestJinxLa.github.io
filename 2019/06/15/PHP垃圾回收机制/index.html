@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/06/15/PHP垃圾回收机制/hzyy.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/15/PHP垃圾回收机制/hzyylj.png">
 <meta property="og:image" content="http://yoursite.com/2019/06/15/PHP垃圾回收机制/5-3gc.jpg">
-<meta property="og:updated_time" content="2019-06-15T10:27:26.812Z">
+<meta property="og:updated_time" content="2019-06-15T10:45:41.552Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="PHP垃圾回收机制">
 <meta name="twitter:description" content="原文： https://blog.csdn.net/u011957758/article/details/76864400  是的，平时经常听到大牛说到的gc，就是垃圾回收器，全称Garbage Collection。 前言早期版本，准确地说是5.3之前(不包括5.3)的垃圾回收机制，是没有专门的垃圾回收器的。只是简单的判断了一下变量的zval的refcount是否为0，是的话就释放否则不释放直">
@@ -371,7 +371,7 @@
                 
               
 
-              <time title="创建时间：2019-06-15 15:41:37 / 修改时间：18:27:26" itemprop="dateCreated datePublished" datetime="2019-06-15T15:41:37+08:00">2019-06-15</time>
+              <time title="创建时间：2019-06-15 15:41:37 / 修改时间：18:45:41" itemprop="dateCreated datePublished" datetime="2019-06-15T15:41:37+08:00">2019-06-15</time>
             
 
             
@@ -485,7 +485,7 @@
 
 <p>的时候，内存的分配做了两件事情：<strong>1.为变量名分配内存，存入符号表 2.为变量值分配内存</strong></p>
 <p>再来看代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">    var_dump(memory_get_usage());</span><br><span class="line">    for($i=0;$i&lt;100;$i++)</span><br><span class="line">    &#123;</span><br><span class="line">        $a = &quot;test&quot;.$i;</span><br><span class="line">        $$a = &quot;hello&quot;;    </span><br><span class="line">	&#125;</span><br><span class="line">	var_dump(memory_get_usage());</span><br><span class="line">	for($i=0;$i&lt;100;$i++)</span><br><span class="line">	&#123;</span><br><span class="line">	    $a = &quot;test&quot;.$i;</span><br><span class="line"> 		unset($$a);    </span><br><span class="line">    &#125;</span><br><span class="line">    var_dump(memory_get_usage());</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php</span><br><span class="line"></span><br><span class="line">    var_dump(memory_get_usage());</span><br><span class="line">    for($i=0;$i&lt;100;$i++)</span><br><span class="line">    &#123;</span><br><span class="line">        $a = &quot;test&quot;.$i;</span><br><span class="line">        $$a = &quot;hello&quot;;    </span><br><span class="line">    &#125;</span><br><span class="line">    var_dump(memory_get_usage());</span><br><span class="line">    for($i=0;$i&lt;100;$i++)</span><br><span class="line">    &#123;</span><br><span class="line">	    $a = &quot;test&quot;.$i;</span><br><span class="line"> 		unset($$a);    </span><br><span class="line">    &#125;</span><br><span class="line">    var_dump(memory_get_usage());</span><br></pre></td></tr></table></figure>
 
 <p>输出：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int 1596864</span><br><span class="line">int 1612080</span><br><span class="line">int 1597680</span><br></pre></td></tr></table></figure>
