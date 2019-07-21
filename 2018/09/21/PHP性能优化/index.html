@@ -96,16 +96,20 @@
 
 
 
-  <meta name="description" content="世界上有10种人，一种懂二进制，一种不懂。">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Le118">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="语言级性能优化 =》 PHP 周边问题性能优化（ webservice 、mysql 缓存） =》 PHP 语言自身分析、优化（底层C的优化） ab -n(请求数)   -c （并发数） 1ab -n 100 -c 10  PHP 语言级的性能优化1.少写代码，多用 PHP 内置的函数，变量，常量。 自写代码冗余较多，性能低。（PHP 代码越长，执行时间越长）， PHP 需要词法分析，语法分析编译">
+<meta name="keywords" content="PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP性能优化">
+<meta property="og:url" content="http://yoursite.com/2018/09/21/PHP性能优化/index.html">
 <meta property="og:site_name" content="Le118">
-<meta property="og:description" content="世界上有10种人，一种懂二进制，一种不懂。">
+<meta property="og:description" content="语言级性能优化 =》 PHP 周边问题性能优化（ webservice 、mysql 缓存） =》 PHP 语言自身分析、优化（底层C的优化） ab -n(请求数)   -c （并发数） 1ab -n 100 -c 10  PHP 语言级的性能优化1.少写代码，多用 PHP 内置的函数，变量，常量。 自写代码冗余较多，性能低。（PHP 代码越长，执行时间越长）， PHP 需要词法分析，语法分析编译">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://note.youdao.com/favicon.ico">
+<meta property="og:updated_time" content="2019-07-21T06:27:38.219Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Le118">
-<meta name="twitter:description" content="世界上有10种人，一种懂二进制，一种不懂。">
+<meta name="twitter:title" content="PHP性能优化">
+<meta name="twitter:description" content="语言级性能优化 =》 PHP 周边问题性能优化（ webservice 、mysql 缓存） =》 PHP 语言自身分析、优化（底层C的优化） ab -n(请求数)   -c （并发数） 1ab -n 100 -c 10  PHP 语言级的性能优化1.少写代码，多用 PHP 内置的函数，变量，常量。 自写代码冗余较多，性能低。（PHP 代码越长，执行时间越长）， PHP 需要词法分析，语法分析编译">
+<meta name="twitter:image" content="https://note.youdao.com/favicon.ico">
 
 
 
@@ -113,7 +117,7 @@
 
   
   
-  <link rel="canonical" href="http://yoursite.com/">
+  <link rel="canonical" href="http://yoursite.com/2018/09/21/PHP性能优化/">
 
 
 
@@ -123,7 +127,7 @@
   };
 </script>
 
-  <title>Le118</title>
+  <title>PHP性能优化 | Le118</title>
   
 
 
@@ -171,8 +175,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -210,7 +213,7 @@
         
         
           
-          <li class="menu-item menu-item-home menu-item-active">
+          <li class="menu-item menu-item-home">
 
     
     
@@ -306,352 +309,9 @@
           
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/06/18/CentOS安装Elasticsearch-6-x/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Le118">
-      <meta itemprop="description" content="世界上有10种人，一种懂二进制，一种不懂。">
-      <meta itemprop="image" content="/images/20190618232953.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Le118">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2019/06/18/CentOS安装Elasticsearch-6-x/" class="post-title-link" itemprop="url">CentOS安装Elasticsearch 6.x</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2019-06-18 22:53:58" itemprop="dateCreated datePublished" datetime="2019-06-18T22:53:58+08:00">2019-06-18</time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Elasticsearch/" itemprop="url" rel="index"><span itemprop="name">Elasticsearch</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <h1 id="1-安装JDK"><a href="#1-安装JDK" class="headerlink" title="1.安装JDK"></a>1.安装JDK</h1><p>安装之前先检查一下系统有没有自带open-jdk</p>
-<p>命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa |grep java</span><br><span class="line"></span><br><span class="line">rpm -qa |grep jdk</span><br><span class="line"></span><br><span class="line">rpm -qa |grep gcj</span><br></pre></td></tr></table></figure>
-
-<p>如果没有输入信息表示没有安装。</p>
-<p>如果安装可以使用</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep java | xargs rpm -e --nodeps</span><br></pre></td></tr></table></figure>
-
-<p>批量卸载所有带有Java的文件  这句命令的关键字是java</p>
-<p>首先检索包含java的列表<br>检索1.8的列表</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list java-1.8*</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2019/06/18/CentOS安装Elasticsearch-6-x/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/24/性能调优攻略/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Le118">
-      <meta itemprop="description" content="世界上有10种人，一种懂二进制，一种不懂。">
-      <meta itemprop="image" content="/images/20190618232953.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Le118">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/12/24/性能调优攻略/" class="post-title-link" itemprop="url">性能调优攻略</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-12-24 23:39:46" itemprop="dateCreated datePublished" datetime="2018-12-24T23:39:46+08:00">2018-12-24</time>
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/性能调优/" itemprop="url" rel="index"><span itemprop="name">性能调优</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>最近在读<a href="https://coolshell.cn/" target="_blank" rel="noopener">耗子叔</a> 的<a href="https://coolshell.cn/articles/7490.html" target="_blank" rel="noopener">《性能调优攻略》</a>受益良多。（这篇篇幅较长，涉及到的东西也比较多，遇到具体的问题可以参看具体的部分。）虽然是12年写的，但是好的东西就是经久不衰的。只要linux还在，这些理论知识还是不变的，比如linux系统负载，网络调优，系统调优…总之写这个就是记录一哈，以便遇到性能的问题希望可以在这里找到解决方案。其中也加了一些文章中提到的一些关键词，查阅的一些参考内容链接。</p>
-<p>系统性能调优，概括的一句话来说就是<strong>要进行优化就得先找到系统性能的瓶颈</strong>。</p>
-<h1 id="系统性能定义"><a href="#系统性能定义" class="headerlink" title="系统性能定义"></a>系统性能定义</h1><p>影响系统性能的两个因素：</p>
-<ol>
-<li><strong>Throughtput</strong>，吞吐量。 每秒可以处理的请求数，任务数。</li>
-<li><strong>Latency</strong>，系统延迟。系统在处理一个请求或一个任务时的延迟。</li>
-</ol>
-<p>一般来说，一个系统的性能受到这两个条件的约束，缺一不可。比如，我的系统可以顶得住一百万的并发，但是系统的延迟是2分钟以上，那么，这个一百万的负载毫无意义。系统延迟很短，但是吞吐量很低，同样没有意义</p>
-<ul>
-<li><strong>Throughtput越大，Latency会越差</strong>。因为请求量过大，系统太繁忙，导致响应速度变慢。</li>
-<li><strong>Latency越好，能支持的Throughtput就会越高</strong>。因为Latency短说明处理速度快，自然可以处理更多请求。</li>
-</ul>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/12/24/性能调优攻略/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -683,10 +343,8 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/09/21/PHP性能优化/" class="post-title-link" itemprop="url">PHP性能优化</a>
+          <h1 class="post-title" itemprop="name headline">PHP性能优化
+
               
             
           </h1>
@@ -744,9 +402,7 @@
       
 
       
-        
-          
-            <p>语言级性能优化 =》 PHP 周边问题性能优化（ webservice 、mysql 缓存） =》 PHP 语言自身分析、优化（底层C的优化）</p>
+        <p>语言级性能优化 =》 PHP 周边问题性能优化（ webservice 、mysql 缓存） =》 PHP 语言自身分析、优化（底层C的优化）</p>
 <p>ab -n(请求数)   -c （并发数）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ab -n 100 -c 10</span><br></pre></td></tr></table></figure>
 
@@ -818,8 +474,6 @@ time php test_magic.php</code></pre></li>
 <p>方法二：串行请求并行化：</p>
 <p>推荐 swoole</p>
 
-          
-        
       
     </div>
 
@@ -840,187 +494,43 @@ time php test_magic.php</code></pre></li>
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/15/PHP垃圾回收机制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Le118">
-      <meta itemprop="description" content="世界上有10种人，一种懂二进制，一种不懂。">
-      <meta itemprop="image" content="/images/20190618232953.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Le118">
-    </span>
-
-    
-      <header class="post-header">
-
         
+          
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                
-                <a href="/2018/08/15/PHP垃圾回收机制/" class="post-title-link" itemprop="url">PHP垃圾回收机制</a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-15 15:41:37" itemprop="dateCreated datePublished" datetime="2018-08-15T15:41:37+08:00">2018-08-15</time>
-            
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/PHP/" itemprop="url" rel="index"><span itemprop="name">PHP</span></a></span>
-
-                
-                
-              
-            </span>
+            <a href="/tags/PHP/" rel="tag"># PHP</a>
           
-
-          
-            
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          <blockquote>
-<p>原文： <a href="https://blog.csdn.net/u011957758/article/details/76864400" target="_blank" rel="noopener">https://blog.csdn.net/u011957758/article/details/76864400</a></p>
-</blockquote>
-<p>是的，平时经常听到大牛说到的gc，就是垃圾回收器，全称Garbage Collection。</p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>早期版本，准确地说是5.3之前(不包括5.3)的垃圾回收机制，是没有专门的垃圾回收器的。只是简单的判断了一下变量的zval的refcount是否为0，是的话就释放否则不释放直至进程结束。</p>
-<p>乍一看确实没毛病啊，然而其中隐藏着变量内存溢出的风险：<a href="http://bugs.php.net/bug.php?id=33595" target="_blank" rel="noopener">http://bugs.php.net/bug.php?id=33595</a> ，无法回收的内存造成了内存泄漏，所以PHP5.3出现了专门负责清理垃圾数据、防止内存泄漏的GC。</p>
-<p>下文将由浅入深(凭感觉)来记录下php的垃圾回收机制是怎么一回事？</p>
-<p>1.php引用计数基本知识点</p>
-<p>2.php的内存管理机制</p>
-<p>3.php中垃圾是如何定义的？</p>
-<p>4.老版本php中如何产生内存泄漏？</p>
-<p>5.5.3版本以后php是如何处理垃圾内存的？</p>
-<p>6.涉及到垃圾回收的知识点</p>
-          <!--noindex-->
-          
-            <div class="post-button text-center">
-              <a class="btn" href="/2018/08/15/PHP垃圾回收机制/#more" rel="contents">
-                阅读全文 &raquo;
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/08/15/PHP垃圾回收机制/" rel="next" title="PHP垃圾回收机制">
+                <i class="fa fa-chevron-left"></i> PHP垃圾回收机制
               </a>
-            </div>
-          
-          <!--/noindex-->
-        
-      
-    </div>
+            
+          </div>
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-    
-    
-
-    
-
-    
-      
-    
-    
-
-    
-
-    <footer class="post-footer">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/24/性能调优攻略/" rel="prev" title="性能调优攻略">
+                性能调优攻略 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
       
 
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -1030,14 +540,15 @@ time php test_magic.php</code></pre></li>
   </article>
 
 
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -1057,8 +568,17 @@ time php test_magic.php</code></pre></li>
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <div class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1146,6 +666,23 @@ time php test_magic.php</code></pre></li>
         </div>
       </div>
 
+      
+      <!--noindex-->
+        <div class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+            
+            
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#PHP-语言级的性能优化"><span class="nav-number">1.</span> <span class="nav-text">PHP 语言级的性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#8-减少计算密集型业务-（大批量日志分析，大批量数据处理等）"><span class="nav-number">1.1.</span> <span class="nav-text">8. 减少计算密集型业务 （大批量日志分析，大批量数据处理等）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#8-1-衔接webserver"><span class="nav-number">1.1.1.</span> <span class="nav-text">8.1 衔接webserver</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-2-后端服务-UI-呈现"><span class="nav-number">1.1.2.</span> <span class="nav-text">8.2 后端服务 UI 呈现</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-务必使用带引号字符串做键值"><span class="nav-number">1.2.</span> <span class="nav-text">9. 务必使用带引号字符串做键值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-PHP-周边问题的性能优化"><span class="nav-number">2.</span> <span class="nav-text">2. PHP 周边问题的性能优化</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-PHP-周边都有什么？"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 PHP 周边都有什么？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-减少文件类的操作"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 减少文件类的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-减少PHP发起的网络请求"><span class="nav-number">2.3.</span> <span class="nav-text">2.3 减少PHP发起的网络请求</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </div>
+      <!--/noindex-->
       
 
       
@@ -1276,6 +813,10 @@ time php test_magic.php</code></pre></li>
 
 
   
+  <script src="/js/scrollspy.js?v=7.1.2"></script>
+<script src="/js/post-details.js?v=7.1.2"></script>
+
+
 
   
 
@@ -1291,6 +832,8 @@ time php test_magic.php</code></pre></li>
 
   
 
+
+  
 
 
   
